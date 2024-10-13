@@ -1,0 +1,233 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--text: #e7e7e0;
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(../fonts/raleway-black.woff2);
+	font-weight: 900;
+}
+body {
+   	background: #000;
+	font-family: raleway_f, sans-serif;
+	line-height: 1.55;
+}
+.main-header {
+	position: relative;
+}
+.main-header::after {
+	content: '';
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: calc(var(--index) * 10);
+	background-image: url(../img/ground.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: calc(var(--index) * -4.5);
+}
+
+.logo {
+	width: 40px;
+	height: 40px;
+	margin: 10px;
+	vertical-align: middle;
+}
+  
+.nav {
+	background-color: transparent;
+	position: absolute;
+	display: flex; align-items: center; justify-content: space-between;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+  }
+  
+.nav.active {
+	opacity: 1;
+}
+  
+  .nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+}
+  
+  .nav li {
+	margin-right: 15px;
+}
+  
+  .nav a {
+	text-decoration: none;
+	color: #ef7b6e;
+	padding: 6px 15px;
+	border-radius: 20px;
+	margin: 0 10px;
+	font-weight: 600;
+}
+  
+  .nav a:hover,
+  .nav a.active {
+	background: #0b2351;
+	color: #fff;
+}
+
+
+.nav-toggle {
+	display: none;
+  }
+  
+  @media (max-width: 768px) {
+	.nav {
+	  padding: 0.5rem;
+	}
+	.nav ul {
+	  flex-direction: column;
+	  align-items: center;
+	}
+	.nav li {
+	  margin-right: 0;
+	  margin-bottom: 10px;
+	}
+	.nav-toggle {
+	  display: block;
+	  position: absolute;
+	  top: 10px;
+	  right: 10px;
+	  background-color: transparent;
+	  border: none;
+	  cursor: pointer;
+	}
+	.nav-toggle span {
+	  display: block;
+	  width: 30px;
+	  height: 3px;
+	  background-color: var(--text);
+	  margin-bottom: 5px;
+	  transition: transform 0.3s ease;
+	}
+	.nav-toggle span:last-child {
+	  margin-bottom: 0;
+	}
+	.nav-toggle.active span {
+	  transform: rotate(45deg);
+	}
+	.nav-toggle.active span:first-child {
+	  transform: rotate(-45deg);
+	}
+	.nav-toggle.active span:last-child {
+	  transform: rotate(90deg);
+	}
+	.nav ul {
+	  display: none;
+	}
+	.nav.active ul {
+	  display: block;
+	}
+ }
+
+.layers {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+.layer {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	will-change: transform;
+	z-index: 2;
+	transition: var(--transition);
+}
+.layers__base {
+	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+	z-index: 0;
+}
+.layers__middle {
+	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+.layers__front {
+	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+.layer__header {
+	z-index: 1;
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	transition: var(--transition);
+	will-change: transform;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: var(--text);
+	text-shadow: 0 0 15px #9d822b;
+}
+.layers__title {
+	font-size: calc(var(--index) * 2.65);
+	letter-spacing: calc(var(--index) / 2.25);
+}
+.layers__caption {
+	font-size: calc(var(--index) / 1.175);
+	letter-spacing: calc(var(--index) / 3.5);
+	margin-top: calc(var(--index) * -.75);
+}
+.main-article {
+	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center;
+	color: var(--text);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	text-align: center;
+	/* Update: */
+	top: -1px;
+	z-index: 10;
+}
+.main-article__header {
+	text-transform: uppercase;
+	font-size: calc(var(--index) * 1.8);
+	letter-spacing: calc(var(--index) / 7.5);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+.main-article__paragraph {
+	max-width: calc(var(--index) * 30);
+	font-size: calc(var(--index) * .9);
+	margin-top: calc(var(--index) / 1.25);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+.content {
+	will-change: transform;
+}
+.copy {
+	position: absolute;
+	bottom: calc(var(--index) * 2.5);
+	opacity: .45;
+	font-size: calc(var(--index) * .75);
+	letter-spacing: calc(var(--index) / 37.5);
+}

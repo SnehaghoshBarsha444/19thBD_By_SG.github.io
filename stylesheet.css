@@ -1,0 +1,337 @@
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #17242d;
+    
+}
+
+.social-icons a{
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    box-shadow: 0 8px 4px rgba(0,0,0,.3);
+    margin: 0 8px;
+    z-index: 1;
+    text-align: center;
+    line-height: 45px;
+    transition: .3s ;
+}
+
+.social-icons a:hover{
+    background: #0ef;
+    transform: rotate(135deg);
+    box-shadow: 0 0 5px #0ef, 0 0 10px #0ef;
+
+}
+
+.social-icons a::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px ;
+    background: #929498;
+    z-index: -1;
+
+}
+
+.social-icons a i{
+    color: #000;
+    font-size: 18px;
+    
+}
+ 
+.social-icons a:hover i {
+    transform: rotate(225deg);
+    color: #0ef;
+
+}
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #262626;
+}
+header{
+    margin-top: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 1.7rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+    align-items: flex-start;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+.social-icons {
+    text-align: center;
+
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #171515;
+    transition: 0.3s;
+    color: #fff;
+    font-size: 28px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Individual Icon Backgrounds */
+.facebook-link {
+    background: #4267B2;  /* Facebook */
+}
+.instagram-link {
+    background: #E1306C;  /* Instagram */
+}
+.twitter-link {
+    background: #1DA1F2;  /* Twitter */
+}
+.youtube-link {
+    background: #FF0000;  /* YouTube */
+}
+.nasa-link .nasa-logo {
+    background: #0b3d91;  /* NASA */
+    font-weight: bold;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.github-link {
+    background: #ffffff;  /* GitHub */
+}
+.linkedin-link {
+    background: #2867B2;  /* LinkedIn */
+}
+.discord-link {
+    background: #5f71b2;  /* Discord */
+}
+.medium-link {
+    background: #00ab6c;  /* Medium */
+}
+
+/* Bottom Icons Backgrounds */
+.spotify-link {
+    background: #1DB954;  /* Spotify */
+}
+.outlook-link {
+    background: #0072C6;  /* Outlook */
+}
+.google-link {
+    background: #DB4437;  /* Google */
+}
+.hacktoberfest-logo {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: none;
+}
+.figma-link {
+    background: #F24E1E;  /* Figma */
+}
+.pinterest-link {
+    background: #E60023;  /* Pinterest */
+}
+.whatsapp-link {
+    background: #25D366;  /* WhatsApp */
+}
+
+   
+/* Hover Effects */
+.facebook-link:hover {
+    color: #4267B2;
+    box-shadow: 0 0 15px #4267B2;
+    text-shadow: 0 0 15px #4267B2;
+}
+.instagram-link:hover {
+    color: #E1306C;
+    box-shadow: 0 0 15px #E1306C;
+    text-shadow: 0 0 15px #E1306C;
+}
+.twitter-link:hover {
+    color: #1DA1F2;
+    box-shadow: 0 0 15px #1DA1F2;
+    text-shadow: 0 0 15px #1DA1F2;
+}
+.youtube-link:hover {
+    color: #FF0000;
+    box-shadow: 0 0 15px #FF0000;
+    text-shadow: 0 0 15px #FF0000;
+}
+.nasa-link:hover .nasa-logo {
+    box-shadow: 0 0 15px #0b3d91;
+    text-shadow: 0 0 15px #0b3d91;
+}
+.github-link:hover {
+    color: #ffffff;
+    box-shadow: 0 0 15px #ffffff;
+    text-shadow: 0 0 15px #ffffff;
+}
+.linkedin-link:hover {
+    color: #2867B2;
+    box-shadow: 0 0 15px #2867B2;
+    text-shadow: 0 0 15px #2867B2;
+}
+.discord-link:hover {
+    color: #5f71b2;
+    box-shadow: 0 0 15px #5f71b2;
+    text-shadow: 0 0 15px #5f71b2;
+}
+.medium-link:hover {
+    color: #00ab6c;
+    box-shadow: 0 0 15px #00ab6c;
+    text-shadow: 0 0 15px #00ab6c;
+}
+
+/* Bottom Icons Hover Effects */
+.spotify-link:hover {
+    color: #1db954;
+    box-shadow: 0 0 15px #1DB954;
+    text-shadow: 0 0 15px #1DB954;
+}
+.outlook-link:hover {
+    color: #0072C6;
+    box-shadow: 0 0 15px #0072C6;
+    text-shadow: 0 0 15px #0072C6;
+}
+.google-link:hover {
+    color: #DB4437;
+    box-shadow: 0 0 15px #DB4437;
+    text-shadow: 0 0 15px #DB4437;
+}
+.hacktoberfest-logo:hover {
+    color: #05570f;
+    box-shadow: 0 0 15px #05570f;
+    text-shadow: 0 0 15px #05570f;
+}
+.figma-link:hover {
+    color: #F24E1E;
+    box-shadow: 0 0 15px #F24E1E;
+    text-shadow: 0 0 15px #F24E1E;
+}
+.pinterest-link:hover {
+    color: #E60023;
+    box-shadow: 0 0 15px #E60023;
+    text-shadow: 0 0 15px #E60023;
+}
+.whatsapp-link:hover {
+    color: #25D366;
+    box-shadow: 0 0 15px #25D366;
+    text-shadow: 0 0 15px #25D366;
+}
+
+/* Layout Adjustments */
+.top-icons, .bottom-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.top-icons {
+    margin-top: 200px;
+}
+
+.bottom-icons {
+    margin-top: 30px;
+}
+
+.nasa-logo {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #0b3d91;
+}
+
+.hacktoberfest-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 2rem;
+    font-size: 1rem;
+    color: #b74b4b;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #b74b4b;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale3d(1.03);
+    background-color: #b74b4b;
+    color: black;
+    box-shadow: 0 0 25px #b74b4b;
+}
